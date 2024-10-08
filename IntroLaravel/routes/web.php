@@ -21,8 +21,10 @@ Route::middleware('auth')->group(function () {
 // });
 
 // Ruta de tipo vista
-Route::view('/', 'welcome');
+Route::view('/', 'inicio')->name('rutainicio');
 
-Route::view('/form', 'formulario');
+Route::view('/formulario', 'formulario')->name('rutaform');
+
+Route::view('/clientes', 'clientes')->name('rutaclientes');
 
 require __DIR__.'/auth.php';
