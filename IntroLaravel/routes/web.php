@@ -27,4 +27,8 @@ Route::view('/formulario', 'formulario')->name('rutaform');
 
 Route::view('/clientes', 'clientes')->name('rutaclientes');
 
+Route::view('/component', 'componentes')->name('rutacomponentes');
+
+
+
 require __DIR__.'/auth.php';
