@@ -19,19 +19,36 @@ class controladorVistas extends Controller
         return view('clientes');    
     }
 
-    public function procesarCliente(Request $peticion){
-        // return 'La información del cliente llego al controlador';
-        // return $peticion->all();
+//     public function procesarCliente(Request $peticion){
+//         return 'La información del cliente llego al controlador';
+//         return $peticion->all();
 
-        // la ruta donde se hizo la petición
-        // return $peticion->path();
+//         la ruta donde se hizo la petición
+//         return $peticion->path();
 
-        // devuelve la ruta completa de la petición
-        // return $peticion->url();
+//         devuelve la ruta completa de la petición
+//         return $peticion->url();
 
-        // nos devuleve la ip del localhost
-        // return $peticion->ip();
+//         nos devuleve la ip del localhost
+//         return $peticion->ip();
+//    }
 
+   public function procesarCliente(Request $peticion){
 
-    }
+    // Respuestas de redirección
+
+    // Redirección usando la ruta
+    // return redirect ('/');
+
+    // Respuestas de redirección
+    // return redirect()->route('rutaclientes');
+
+    // Redirección al origen 
+    // return back();
+
+    // Redireción con valores en session
+    $usuario = $peticion->input('txtnombre');
+    session()->flash('exito', 'Se guardó el usuario '.$usuario);
+    return to_route('rutaform');
+   }
 }

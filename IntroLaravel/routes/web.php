@@ -6,19 +6,14 @@ use Illuminate\Support\Facades\Route;
 
 // Nueva sintáxis de la ruta, definimos la ruta, mandamos a llamar al controlador y su función y el apodo de las vistas
 Route::get('/', [controladorVistas::class, 'home'])->name('rutainicio');
+
 Route::get('/formulario', [controladorVistas::class, 'formulario'])->name('rutaform');
+
 Route::get('/clientes', [controladorVistas::class, 'consulta'])->name('rutaclientes');
+
 Route::view('/component', 'componentes')->name('rutacomponentes');
+
 Route::post('/enviarCliente', [controladorVistas::class, 'procesarCLiente'])->name('rutaEnviar');
-
-
-
-
-
-
-
-
-
 
 
 
