@@ -11,7 +11,7 @@ class validadorPeticiones extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class validadorPeticiones extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'txtnombre'=>'required | min:5 | max:20',
+            'txtcorreo'=>'required | email:rfc,dns',
+            'txtcontraseña'=>'required | min:5 | max:20',
+            'txtedad'=>'required | numeric',
         ];
     }
 }
