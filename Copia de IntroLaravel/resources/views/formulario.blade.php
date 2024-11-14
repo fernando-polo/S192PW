@@ -9,18 +9,18 @@
   <div class="container mt-5 col-md-6">
 
     {{-- Valida si existe la clase sesión y ejecuta el if, dos formas diferentes: --}}
-    
-      {{-- @if (session('exito'))
+      @if (session('exito'))
       <x-Alert tipo="success">{{ session('exito') }}</x-Alert>
       @endif
 
       @session ('exito')
       <x-Alert tipo="danger">{{ $value }}</x-Alert>
-      @endsession --}}
+      @endsession
 
       @session ('exito')
         <script>
             Swal.fire({
+              title: "Respuesta del servidor",
               text: "Se guardó el usuario: {{$value}}",
               icon: "success"
           });
@@ -33,7 +33,7 @@
       </div>
   
       <div class="card-body text-justify">
-        <form action="{{ route('enviaCliente') }}" method="POST">
+        <form action="/enviarCliente" method="POST">
 
           @csrf
       

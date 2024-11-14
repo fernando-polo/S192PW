@@ -11,23 +11,16 @@ class controladorVistas extends Controller
         return view('inicio');
     }
 
+    public function formulario(){
+        return view('formulario');
+
+    }
 
     public function consulta(){
         return view('clientes');    
     }
 
-
-   public function procesarCliente(validadorClientes $peticionValidada){
-
-    // Redireción con valores en session
-    $usuario = $peticionValidada->input('txtnombre');
-
-    session()->flash('exito', 'Se guardó el usuario '.$usuario);
-
-    return to_route('rutaform');
-   }
-
-   //     public function procesarCliente(Request $peticion){
+//     public function procesarCliente(Request $peticion){
 //         return 'La información del cliente llego al controlador';
 //         return $peticion->all();
 
@@ -41,7 +34,17 @@ class controladorVistas extends Controller
 //         return $peticion->ip();
 //    }
 
-    // Respuestas de redirección
+   public function procesarCliente(validadorClientes $peticionValidada){
+
+    // Redireción con valores en session
+    $usuario = $peticionValidada->input('txtnombre');
+
+    session()->flash('exito', 'Se guardó el usuario '.$usuario);
+
+    return to_route('rutaform');
+   }
+
+       // Respuestas de redirección
 
     // Redirección usando la ruta
     // return redirect ('/');
