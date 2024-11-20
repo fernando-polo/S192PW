@@ -23,3 +23,4 @@ Route::post('/cliente', [clienteController::class, 'store'])->name('enviaCliente
 
 Route::get('/clientes', [clienteController::class, 'index'])->name('rutaclientes');
 
+Route::get('/clientesUpdate', [clienteController::class, 'edit'])->name('rutaclientesUpdate');
