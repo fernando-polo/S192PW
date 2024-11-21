@@ -66,26 +66,48 @@ class clienteController extends Controller
      * Show the form for editing the specified resource.
      */
 
-    public function edit()
-    {
-        return view('clientesUpdate');
-    }
+
+    public function edit(string $id)
+        {
+            $cliente = DB::table('clientes')->where('id', $id)->first();
+            return view('clientesUpdate', compact('cliente'));
+        }
 
     /**
      * Update the specified resource in storage.
      */
 
-    public function update(Request $request, string $id)
+    public function update(validadorClientes $request, string $id)
     {
-       
+        DB::table('clientes')
+            ->where('id', $id)
+            ->update([
+                'nombre' => $request->txtnombre,
+                'apellido' => $request->txtapellido,
+                'correo' => $request->txtcorreo,
+                'telefono' => $request->txttelefono,
+                'updated_at' => Carbon::now(),
+            ]);
+
+        $usuario = $request->txtnombre;
+
+        session()->flash('clienteActualizado', $usuario);
+
+        return to_route('rutaclientes');
     }
 
 
     /**
      * Remove the specified resource from storage.
      */
+
     public function destroy(string $id)
     {
-        //
+        DB::table('clientes')->where('id', $id)->delete();
+
+        session()->flash('clienteEliminado');
+
+        return to_route('rutaclientes');
+
     }
 }

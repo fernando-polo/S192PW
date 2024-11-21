@@ -11,21 +11,15 @@ class controladorVistas extends Controller
         return view('inicio');
     }
 
+//    public function procesarCliente(validadorClientes $peticionValidada){
 
-    public function consulta(){
-        return view('clientes');    
-    }
+//     // Redireción con valores en session
+//     $usuario = $peticionValidada->input('txtnombre');
 
+//     session()->flash('exito', 'Se guardó el usuario '.$usuario);
 
-   public function procesarCliente(validadorClientes $peticionValidada){
-
-    // Redireción con valores en session
-    $usuario = $peticionValidada->input('txtnombre');
-
-    session()->flash('exito', 'Se guardó el usuario '.$usuario);
-
-    return to_route('rutaform');
-   }
+//     return to_route('rutaform');
+//    }
 
    //     public function procesarCliente(Request $peticion){
 //         return 'La información del cliente llego al controlador';

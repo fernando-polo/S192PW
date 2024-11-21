@@ -94,6 +94,7 @@
     "Actualizar":"Update",
     "Eliminar":"Delete",
     "Turista Sin Maps":"Tourist without maps",
-    "Actualizar cliente":"Update customer"
+    "Actualizar cliente":"Update customer",
+    "Actualizar registro":"Update registration"
     
 }
