@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hola mundo</h1>
-</body>
-</html>
+@extends('layouts.plantilla1')
+
+@section('content')
+    {{--     
+        Permisos MAC para Bootstrap
+            sudo chown -R fernandogomez:staff /Users/fernandogomez/Herd/S192PW/PRUEBA2
+            chmod -R 775 /Users/fernandogomez/Herd/S192PW/PRUEBA2
+
+            rm -rf node_modules package-lock.json                                     
+            npm cache clean --force                              
+            npm install
+
+            En el app.js:
+            import 'bootstrap/dist/css/bootstrap.min.css';
+            import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+        Instalar Bootstrap
+            npm i -D bootstrap @popperjs/core sass
+
+            En el app.js:
+            import 'bootstrap/dist/css/bootstrap.min.css';
+            import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+    --}}
+
+    <x-card>
+        <x-slot name="contenido">
+            Hola mundo
+        </x-slot>
+    </x-card>
+    
+@endsection
