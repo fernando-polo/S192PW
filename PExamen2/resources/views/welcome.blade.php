@@ -20,6 +20,15 @@
             En el app.js:
             import 'bootstrap/dist/css/bootstrap.min.css';
             import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+        
+        Traducción:
+            php artisan lang:publish
+
+            composer require --dev laravel-lang/lang
+
+            +
+
+            php artisan lang:update
 
     --}}
 
@@ -28,5 +37,5 @@
             Hola mundo
         </x-slot>
     </x-card>
-    
+
 @endsection

@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>{{__('Hola mi gente')}}</h3>
     @yield('content')
     
 </body>
