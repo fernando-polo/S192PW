@@ -1,4 +1,4 @@
-# S192PW — Programación Web 🖥️
+# Web Programming - Course 🖥️
 
 Course repository for the Web Programming class. Contains exercises, practices, and projects developed throughout the semester using the Laravel PHP framework.
 
